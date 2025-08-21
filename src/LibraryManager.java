@@ -4,6 +4,20 @@ public class LibraryManager {
     private Library library = new Library();
     private Scanner scanner = new Scanner(System.in);
 
+    private static LibraryManager instance;
+    private LibraryManager(){
+
+    }
+    public static LibraryManager getInstance(){
+        if(instance==null){
+           instance=new LibraryManager();
+        }
+        return instance;
+
+    }
+
+
+
     public void start() {
         while (true) {
             System.out.println("\n1. Add Book\n2. Remove Book\n3. Search Book\n4. List Books\n");
